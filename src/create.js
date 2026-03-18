@@ -567,6 +567,7 @@ function resolveTargetDirectory(projectName, cwd, inPlace) {
 export async function run() {
   const rawArgs = process.argv.slice(2);
   const hasExplicitJqueryFlag = rawArgs.some((arg) => arg === '--jquery' || arg === '--no-jquery');
+  const hasExplicitInstallFlag = rawArgs.some((arg) => arg === '--install' || arg === '--no-install');
   const argv = minimist(rawArgs, {
     boolean: ['yes', 'jquery', 'install', 'in-place'],
     string: ['preset', 'package-manager'],
@@ -603,7 +604,7 @@ export async function run() {
       default: false,
     });
 
-  const shouldInstall = typeof argv.install === 'boolean'
+  const shouldInstall = hasExplicitInstallFlag
     ? argv.install
     : argv.yes
       ? NON_INTERACTIVE_DEFAULTS.install
