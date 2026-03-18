@@ -1,6 +1,6 @@
 {
   "name": "create-vite-html-starter",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "CLI scaffold for Vite-based HTML starters with Vanilla, Tailwind, and UIkit presets.",
   "author": "Dudka Alexandr <dudka.alexandr83@gmail.com>",
   "license": "MIT",
