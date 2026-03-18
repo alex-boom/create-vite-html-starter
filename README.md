@@ -1,63 +1,48 @@
 # create-vite-html-starter
 
-CLI scaffold for Vite-based HTML/CSS/JS projects.
+[![npm version](https://img.shields.io/npm/v/create-vite-html-starter.svg)](https://www.npmjs.com/package/create-vite-html-starter)
+[![npm downloads](https://img.shields.io/npm/dm/create-vite-html-starter.svg)](https://www.npmjs.com/package/create-vite-html-starter)
+[![license](https://img.shields.io/npm/l/create-vite-html-starter.svg)](https://www.npmjs.com/package/create-vite-html-starter)
 
-## What you get
+Starter CLI for creating production-ready HTML projects on top of Vite.
 
-- Multiple presets:
-  - `vanilla`
-  - `vanilla-tailwind`
-  - `uikit`
-  - `full` (`uikit + tailwind`)
-- Optional jQuery for any preset:
-  - `--jquery`
-  - `--no-jquery`
-- Ready project structure with:
-  - `index.html` and `second.html`
-  - SCSS setup
-  - Vite config
+The goal of this tool is to remove repetitive setup work and let you start UI/layout development immediately.
+It generates a clean project structure with multi-page support, HTML includes, SCSS architecture, and optional framework integrations.
 
-## Use locally from this repo
+## Why this starter
 
-1) Install dependencies:
+Most teams spend time recreating the same baseline:
+- Vite config for HTML pages
+- shared `head/header/footer` includes
+- styles architecture and reset/base layers
+- optional Tailwind or UIkit setup
+- basic interactive JS wiring
 
-```bash
-yarn install
-```
+This starter gives you all of that in one command, with a predictable structure that is easy to scale.
 
-2) Run the local CLI:
+## Key features
 
-```bash
-node ./bin/create-vite-html-starter.js
-```
+- Vite-based development with fast reload
+- Multi-page HTML setup out of the box
+- Include-driven reusable layout components (`head`, `header`, `footer`)
+- SCSS architecture with shared base/layout/vendor layers
+- Optional Tailwind, UIkit, and jQuery integrations
+- Non-interactive mode for automation/CI usage
 
-The CLI will ask for:
-- project name
-- preset
-- jQuery on/off
-- install dependencies now or later
+## Requirements
 
-3) Non-interactive example:
+- Node.js 18+
+- npm, pnpm, or yarn
 
-```bash
-node ./bin/create-vite-html-starter.js my-app --yes --preset full --no-jquery --no-install
-```
+## Quick Start
 
-4) Run generated project:
-
-```bash
-cd my-app
-npm install
-npm run dev
-```
-
-## Use as published package
-
-Use one of the following commands:
+No global installation is required.
 
 ```bash
 npm create vite-html-starter@latest
 ```
+
+Alternative package managers:
 
 ```bash
 pnpm create vite-html-starter
@@ -67,108 +52,190 @@ pnpm create vite-html-starter
 yarn create vite-html-starter
 ```
 
+After project generation:
+
+```bash
+cd my-app
+npm install
+npm run dev
+```
+
+## What the CLI asks (interactive flow)
+
+In interactive mode, CLI asks:
+- project name
+- preset
+- include jQuery or not
+- install dependencies now or not
+
+If you pass `--yes`, prompts are skipped and defaults are used.
+
+## What gets generated (project structure)
+
+Typical generated structure:
+
+```text
+my-app/
+├── src/
+│   ├── components/
+│   │   ├── head.html
+│   │   ├── header.html
+│   │   └── footer.html
+│   ├── js/
+│   │   └── main.js
+│   └── styles/
+│       ├── style.scss
+│       ├── base/
+│       ├── layout/
+│       └── vendors/
+├── index.html
+├── second.html
+├── vite.config.js
+└── package.json
+```
+
+How it works:
+- `index.html` and `second.html` use include placeholders.
+- `vite.config.js` injects `head/header/footer` from `src/components`.
+- style entry is generated based on selected preset.
+- JS entry is generated based on selected features (`uikit`, `jquery`).
+
 ## Presets
 
-- `vanilla`: plain HTML + SCSS
-- `vanilla-tailwind`: HTML + Tailwind
-- `uikit`: HTML + UIkit
-- `full`: UIkit + Tailwind
+| Preset | Description |
+| --- | --- |
+| `vanilla` | Plain HTML + SCSS stack, no Tailwind/UIkit |
+| `vanilla-tailwind` | HTML + Tailwind utilities, PostCSS + Tailwind config |
+| `uikit` | HTML + UIkit components/styles, UIkit JS + icons connected |
+| `full` | UIkit + Tailwind in one project |
 
-## CLI flags
+`jQuery` can be enabled or disabled independently for any preset.
 
-- `--preset <name>`: choose preset
-- `--jquery`: force jQuery ON
-- `--no-jquery`: force jQuery OFF
-- `--yes`: skip prompts and use defaults
-- `--no-install`: skip dependency installation
-- `--in-place`: create project in current directory
-- `--package-manager <npm|pnpm|yarn>`: select package manager
+## CLI options (detailed)
 
-Note: if you run without `--yes` and without explicit `--jquery`/`--no-jquery`, the CLI will ask `Include jQuery?`.
+| Option | Description |
+| --- | --- |
+| `--preset <name>` | Preset: `vanilla`, `vanilla-tailwind`, `uikit`, `full` |
+| `--jquery` | Force jQuery ON |
+| `--no-jquery` | Force jQuery OFF |
+| `--yes` | Non-interactive mode with defaults |
+| `--no-install` | Skip dependency installation after scaffold |
+| `--in-place` | Scaffold directly into current directory |
+| `--package-manager <npm\|pnpm\|yarn>` | Explicit package manager selection |
 
-## Release checklist
+If `--jquery` / `--no-jquery` is not passed and you are in interactive mode, CLI asks `Include jQuery?`.
 
-Before each publish:
+## Usage examples
 
-1) Ensure you are logged in:
-
-```bash
-npm whoami
-```
-
-2) Run package content check:
-
-```bash
-yarn pack:check
-```
-
-3) Run smoke generation:
-
-```bash
-yarn smoke
-```
-
-4) Bump version:
-
-```bash
-npm version patch
-```
-
-## Versioning guide (SemVer)
-
-Use this rule for `npm version`:
-
-- `patch` (`0.1.1` -> `0.1.2`): fixes and small improvements without breaking existing usage.
-  - Example: bugfix in `--jquery` handling, README typo fixes, minor template style cleanup.
-- `minor` (`0.1.1` -> `0.2.0`): new backward-compatible features.
-  - Example: new preset, new CLI flag, additional generated file that does not break old commands.
-- `major` (`0.1.1` -> `1.0.0`): breaking changes.
-  - Example: rename/remove CLI flags, change command behavior in incompatible way, remove preset.
-
-Useful commands:
-
-```bash
-npm version patch
-```
-
-```bash
-npm version minor
-```
-
-```bash
-npm version major
-```
-
-## Publish to npm
-
-If you are not logged in yet:
-
-```bash
-npm login
-```
-
-Publish:
-
-```bash
-npm publish --access public
-```
-
-Verify install flow in a clean directory:
+### Interactive
 
 ```bash
 npm create vite-html-starter@latest
 ```
 
-## Feedback
+### Non-interactive (fast automation)
 
-- Bug reports: `https://github.com/alex-boom/create-vite-html-starter/issues`
-- Discussions and ideas: `https://github.com/alex-boom/create-vite-html-starter/discussions`
+```bash
+npm create vite-html-starter@latest my-app -- --yes --preset full --no-jquery --no-install
+```
 
-## For CLI development
+### Run local source (this repository)
 
 ```bash
 yarn install
+node ./bin/create-vite-html-starter.js
+```
+
+### Generate into current directory
+
+```bash
+node ./bin/create-vite-html-starter.js my-app --in-place
+```
+
+## Troubleshooting
+
+### `dist/index.html` opened with `file://` has no proper styles/scripts
+
+This is expected for modern module-based bundles.
+Use HTTP instead:
+
+```bash
+npm run preview
+```
+
+or any static server for `dist`.
+
+### SCSS warning `Unknown at rule @tailwind`
+
+For Tailwind presets this is handled by generated `.vscode/settings.json`.
+
+### Can I deploy static output to local web server folders (for example OpenServer/OSPanel)?
+
+Yes. Use `npm run build`, then serve `dist` through HTTP domain/server.
+Do not open build output directly as `file://...`.
+
+## How to customize generated project
+
+Most common entry points:
+
+- layout includes:
+  - `src/components/head.html`
+  - `src/components/header.html`
+  - `src/components/footer.html`
+- page content:
+  - `index.html`
+  - `second.html`
+- styles:
+  - `src/styles/style.scss` and partials
+- JS logic:
+  - `src/js/main.js`
+
+Recommended flow:
+1. run `npm run dev`
+2. replace demo blocks with project blocks
+3. split styles by sections/components
+4. build with `npm run build`
+5. verify with `npm run preview`
+
+## Feedback and support
+
+- Report bugs: [GitHub Issues](https://github.com/alex-boom/create-vite-html-starter/issues)
+- Ask questions / share ideas: [GitHub Discussions](https://github.com/alex-boom/create-vite-html-starter/discussions)
+- npm page: [create-vite-html-starter](https://www.npmjs.com/package/create-vite-html-starter)
+- source code: [alex-boom/create-vite-html-starter](https://github.com/alex-boom/create-vite-html-starter)
+
+If this starter helps your workflow, consider giving the repository a star.
+
+## Release workflow (for maintainer)
+
+```bash
+npm whoami
 yarn smoke
 yarn pack:check
+npm version patch
+npm publish --access public
 ```
+
+Post-publish check:
+
+```bash
+npm create vite-html-starter@latest
+```
+
+## Versioning
+
+- `patch` - fixes and small improvements, no breaking changes
+- `minor` - backward-compatible features
+- `major` - breaking changes in CLI behavior or generated project contract
+
+Typical examples:
+- `patch`: README improvement, bugfix in CLI flags, template style cleanup
+- `minor`: new preset, new optional feature/flag
+- `major`: removed/renamed flags, changed generated structure in incompatible way
+
+## Author
+
+- Dudka Alexandr
+- Email: `dudka.alexandr83@gmail.com`
+- GitHub: [alex-boom](https://github.com/alex-boom)
 
