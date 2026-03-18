@@ -159,6 +159,11 @@ Verify install flow in a clean directory:
 npm create vite-html-starter@latest
 ```
 
+## Feedback
+
+- Bug reports: `https://github.com/alex-boom/create-vite-html-starter/issues`
+- Discussions and ideas: `https://github.com/alex-boom/create-vite-html-starter/discussions`
+
 ## For CLI development
 
 ```bash

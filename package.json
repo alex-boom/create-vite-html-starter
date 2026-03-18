@@ -1,6 +1,6 @@
 {
   "name": "create-vite-html-starter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CLI scaffold for Vite-based HTML starters with Vanilla, Tailwind, and UIkit presets.",
   "author": "Dudka Alexandr <dudka.alexandr83@gmail.com>",
   "license": "MIT",
@@ -28,6 +28,14 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-boom/create-vite-html-starter.git"
+  },
+  "homepage": "https://github.com/alex-boom/create-vite-html-starter#readme",
+  "bugs": {
+    "url": "https://github.com/alex-boom/create-vite-html-starter/issues"
   },
   "dependencies": {
     "@inquirer/prompts": "^7.10.1",
