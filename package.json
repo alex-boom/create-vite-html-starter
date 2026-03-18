@@ -1,0 +1,38 @@
+{
+  "name": "create-vite-html-starter",
+  "version": "0.1.1",
+  "description": "CLI scaffold for Vite-based HTML starters with Vanilla, Tailwind, and UIkit presets.",
+  "author": "Dudka Alexandr <dudka.alexandr83@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "vite",
+    "scaffold",
+    "starter",
+    "cli",
+    "tailwind",
+    "uikit",
+    "html"
+  ],
+  "bin": {
+    "create-vite-html-starter": "bin/create-vite-html-starter.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates"
+  ],
+  "scripts": {
+    "smoke": "node ./bin/create-vite-html-starter.js smoke-app --preset full --jquery --no-install --yes",
+    "pack:check": "npm pack --dry-run"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.10.1",
+    "execa": "^9.6.0",
+    "fs-extra": "^11.3.2",
+    "minimist": "^1.2.8"
+  }
+}

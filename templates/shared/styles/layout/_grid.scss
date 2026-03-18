@@ -1,0 +1,111 @@
+.row-grid {
+	width: 100%;
+	display: grid;
+	grid-gap: 30px;
+
+	&.grid-gap-10 {
+		grid-gap: 10px;
+	}
+
+	&.grid-gap-18 {
+		grid-gap: 18px;
+	}
+
+	&.no-gap {
+		grid-gap: 0;
+	}
+
+	&.row-gap-0 {
+		row-gap: 0;
+	}
+
+	&.column-gap-0 {
+		column-gap: 0;
+	}
+
+	&.col-auto-100 {
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		// grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		// auto-fit не размножает колонки удобно при центрировании полседнего row когда 3эл. вверху и 2 нижних по центру
+	}
+
+	&.col-auto-200 {
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
+
+	&.col-auto-300 {
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	}
+
+	&.col-auto-400 {
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	}
+
+	&.col-auto-500 {
+		grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+	}
+
+	&.col-2 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	&.col-3 {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	&.col-4 {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	&.col-5 {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	&.col-md-2 {
+		@include media('>=tablet') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&.col-md-3 {
+		@include media('>=tablet') {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	&.col-md-4 {
+		@include media('>=tablet') {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&.col-md-5 {
+		@include media('>=tablet') {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+
+	&.col-lg-2 {
+		@include media('>=desktop') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	&.col-lg-3 {
+		@include media('>=desktop') {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	&.col-lg-4 {
+		@include media('>=desktop') {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	&.col-lg-5 {
+		@include media('>=desktop') {
+			grid-template-columns: repeat(5, 1fr);
+		}
+	}
+}

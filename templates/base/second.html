@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<%- head %>
+
+  <body>
+    <div id="wrapper">
+      <%- header %>
+      <main id="main" class="container">
+        <section class="demo-hero">
+          <p class="demo-tag">Vanilla preset</p>
+          <h1 class="demo-title">Second page preview</h1>
+          <p class="demo-subtitle">This page mirrors the same include and framework setup.</p>
+        </section>
+        <section class="demo-grid">
+          <article class="demo-card">
+            <h3>Semantic HTML</h3>
+            <p>Lightweight structure ready for classic slicing flow.</p>
+          </article>
+          <article class="demo-card">
+            <h3>SCSS architecture</h3>
+            <p>Base/layout/vendors stack is connected and editable.</p>
+          </article>
+          <article class="demo-card">
+            <h3>Instant start</h3>
+            <p>Open pages and start replacing demo blocks with project sections.</p>
+          </article>
+        </section>
+        <div class="demo-actions">
+          <button id="demo-toggle" type="button" class="demo-button">Toggle demo state</button>
+          <div id="demo-console" data-state="off" class="demo-console">Interaction state: <strong id="demo-status">OFF</strong> (Vanilla JS)</div>
+        </div>
+      </main>
+      <%- footer %>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+
+</html>
