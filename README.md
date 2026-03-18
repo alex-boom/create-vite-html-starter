@@ -56,6 +56,15 @@ After project generation:
 
 ```bash
 cd my-app
+npm run dev
+```
+
+By default, dependencies are installed automatically by the CLI.
+
+If you used `--no-install` (or selected `No` in the install prompt), install manually first:
+
+```bash
+cd my-app
 npm install
 npm run dev
 ```
