@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Starter Card Three</title>
+  <desc id="desc">Emerald and cyan abstract card background.</desc>
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g3)"/>
+  <g fill="#ffffff" fill-opacity="0.2">
+    <rect x="420" y="36" width="170" height="170" rx="26"/>
+    <rect x="470" y="236" width="120" height="90" rx="20"/>
+  </g>
+  <rect x="52" y="58" width="280" height="34" rx="10" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="52" y="113" width="430" height="18" rx="9" fill="#ccfbf1"/>
+  <rect x="52" y="144" width="350" height="18" rx="9" fill="#ccfbf1"/>
+</svg>

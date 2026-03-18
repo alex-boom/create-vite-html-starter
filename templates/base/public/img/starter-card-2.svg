@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Starter Card Two</title>
+  <desc id="desc">Purple and pink abstract card background.</desc>
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g2)"/>
+  <path d="M0 260C130 200 250 340 360 280C450 230 560 170 640 210V360H0Z" fill="#ffffff" fill-opacity="0.18"/>
+  <rect x="58" y="62" width="250" height="34" rx="10" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="58" y="117" width="450" height="18" rx="9" fill="#f5d0fe"/>
+  <rect x="58" y="148" width="390" height="18" rx="9" fill="#f5d0fe"/>
+</svg>

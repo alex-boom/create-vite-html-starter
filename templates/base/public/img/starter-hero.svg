@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Starter Hero</title>
+  <desc id="desc">Abstract gradient background with grid and cards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#e2e8f0" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <g opacity="0.25" stroke="#ffffff">
+    <path d="M0 80h1200M0 180h1200M0 280h1200M0 380h1200M0 480h1200M0 580h1200"/>
+    <path d="M120 0v700M320 0v700M520 0v700M720 0v700M920 0v700M1120 0v700"/>
+  </g>
+  <g transform="translate(120 130)">
+    <rect width="960" height="440" rx="24" fill="#0b1220" fill-opacity="0.35"/>
+    <rect x="40" y="40" width="580" height="80" rx="14" fill="url(#card)"/>
+    <rect x="40" y="150" width="430" height="20" rx="10" fill="#cbd5e1"/>
+    <rect x="40" y="185" width="370" height="20" rx="10" fill="#cbd5e1"/>
+    <rect x="40" y="250" width="260" height="140" rx="16" fill="url(#card)"/>
+    <rect x="330" y="250" width="260" height="140" rx="16" fill="url(#card)"/>
+    <rect x="620" y="250" width="300" height="140" rx="16" fill="url(#card)"/>
+  </g>
+</svg>
